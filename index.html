@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#173b2b">
+  <meta name="description" content="Explore a living 3D forest while learning new languages with LinguaLearn.">
+
+  <title>LinguaLearn | Explore the Living Forest</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+  <script src="effects.js" defer></script>
+  <script type="module" src="forest.js"></script>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="app-header">
+    <a class="brand" href="#home">
+      <span class="brand-icon">🌿</span>
+      <span>
+        <strong>LinguaLearn</strong>
+        <small>Learn · Explore · Grow</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#forest">Forest</a>
+      <a href="#categories">Languages</a>
+      <a href="#flashcards">Flashcards</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#progress">Progress</a>
+    </nav>
+
+    <a class="header-cta" href="#categories">Start Learning ↗</a>
+  </header>
+
+
+  <main id="home">
+
+    <!-- WELCOME SECTION -->
+    <section class="welcome-section">
+      <div class="welcome-copy">
+        <span class="eyebrow">YOUR LANGUAGE ADVENTURE STARTS HERE</span>
+
+        <h1>
+          Discover a new language.
+          <span>Explore a new world.</span>
+        </h1>
+
+        <p>
+          Wander through a magical forest, meet amazing wildlife,
+          and learn new words one adventure at a time.
+        </p>
+
+        <div class="welcome-actions">
+          <a href="#forest" class="primary-btn">Explore the Forest 🌲</a>
+          <a href="#categories" class="secondary-link">Choose a Language →</a>
+        </div>
+
+        <div class="welcome-facts">
+          <div>
+            <strong>6</strong>
+            <span>Languages</span>
+          </div>
+          <div>
+            <strong>60+</strong>
+            <span>Vocabulary items</span>
+          </div>
+          <div>
+            <strong>∞</strong>
+            <span>Ways to learn</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome-art" aria-hidden="true">
+        <div class="art-glow"></div>
+        <span class="art-leaf leaf-one">🍃</span>
+        <span class="art-leaf leaf-two">🌿</span>
+        <span class="art-animal">🦌</span>
+        <span class="art-bird">🕊️</span>
+        <span class="art-flower">🌼</span>
+        <div class="art-caption">A little learning. A big adventure.</div>
+      </div>
+    </section>
+
+
+    <!-- LEARNING STATS -->
+    <section class="stats-section" aria-label="Learning statistics">
+      <article class="stat-card">
+        <span class="stat-icon">📚</span>
+        <div>
+          <p>Total Words</p>
+          <strong id="totalWords">60</strong>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">✅</span>
+        <div>
+          <p>Words Learned</p>
+          <strong id="completedWords">0</strong>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">🏆</span>
+        <div>
+          <p>Best Quiz Score</p>
+          <strong id="bestScore">0%</strong>
+        </div>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-icon">🌱</span>
+        <div>
+          <p>Learning Journey</p>
+          <strong id="learningLevel">Beginner</strong>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- 3D FOREST SECTION -->
+    <section class="forest-section" id="forest">
+      <div class="forest-heading">
+        <span class="forest-label">YOUR NATURE ADVENTURE</span>
+
+        <h2>Explore the <span>Living Forest</span></h2>
+
+        <p>
+          Meet forest friends, watch the birds fly, and discover
+          a world full of languages.
+        </p>
+      </div>
+
+      <div class="forest-world">
+        <!-- Three.js renders the forest inside this container -->
+        <div
+          id="forest3d"
+          aria-label="Interactive 3D forest with animated deer, rabbits, birds and butterflies"
+        ></div>
+
+        <div class="forest-overlay">
+          <span class="forest-badge">🌿 WELCOME EXPLORER</span>
+
+          <h3>A world full of wonder.</h3>
+
+          <p>
+            Discover new words while exploring a living forest.
+            Your next adventure is waiting.
+          </p>
+
+          <a href="#categories" class="forest-button">
+            Start Learning <span>↗</span>
+          </a>
+
+          <div class="forest-animal-label">
+            🦌 Deer · 🐇 Rabbits · 🐦 Birds · 🦋 Butterflies
+          </div>
+        </div>
+
+        <div class="forest-hint">↔ Drag to explore the forest</div>
+      </div>
+    </section>
+
+
+    <!-- LANGUAGE CATEGORIES -->
+    <section class="category-section" id="categories">
+      <div class="section-heading">
+        <span class="eyebrow">PICK YOUR ADVENTURE</span>
+        <h2>Choose a Language</h2>
+        <p>Every language opens a different door to the world.</p>
+      </div>
+
+      <!-- script.js populates the language buttons here -->
+      <div class="categories-grid" id="categoriesGrid"></div>
+    </section>
+
+
+    <!-- FLASHCARDS -->
+    <section class="learning-section" id="flashcards">
+      <div class="section-heading">
+        <span class="eyebrow">LEARN AT YOUR OWN PACE</span>
+        <h2>Vocabulary Trail</h2>
+        <p>Explore a word, discover its meaning, and mark it as learned.</p>
+      </div>
+
+      <div class="flashcard-area">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-top">
+            <span id="cardCategory">Spanish</span>
+            <span class="card-sparkle">✦</span>
+          </div>
+
+          <div class="flashcard-content">
+            <span class="word-label">YOUR NEW WORD</span>
+
+            <h3 id="word">Hola</h3>
+
+            <p id="pronunciation">OH-lah</p>
+
+            <div id="meaningContainer" hidden>
+              <div class="meaning-divider"></div>
+              <span class="meaning-label">MEANING</span>
+              <p id="meaning">Hello</p>
+            </div>
+          </div>
+
+          <div class="flashcard-bottom">
+            <span>Keep exploring ✨</span>
+            <span id="cardCount">1 / 10</span>
+          </div>
+        </div>
+
+        <div class="flashcard-controls">
+          <button class="secondary-btn" id="prevBtn" type="button">
+            ← Previous
+          </button>
+
+          <button class="primary-btn" id="flipBtn" type="button">
+            Reveal Meaning
+          </button>
+
+          <button class="secondary-btn" id="nextBtn" type="button">
+            Next →
+          </button>
+        </div>
+
+        <button class="learned-btn" id="learnedBtn" type="button">
+          ✓ Mark as Learned
+        </button>
+
+        <p class="learning-tip">
+          💡 Tip: Say the word out loud to help remember it.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- QUIZ SECTION -->
+    <section class="quiz-section" id="quiz">
+      <div class="section-heading">
+        <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+        <h2>Forest Challenge</h2>
+        <p>Answer the questions and see how much you have learned.</p>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-topline">
+          <span id="questionNumber">Question 1</span>
+          <span>🧠 Vocabulary Quiz</span>
+        </div>
+
+        <div
+          class="quiz-progress-track"
+          role="progressbar"
+          aria-label="Quiz progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+          id="quizProgressTrack"
+        >
+          <div class="quiz-progress-fill" id="quizProgress"></div>
+        </div>
+
+        <h3 id="question">What does this word mean?</h3>
+
+        <div
+          class="quiz-options"
+          id="options"
+          aria-label="Answer options"
+        ></div>
+
+        <p id="feedback" class="quiz-feedback" aria-live="polite" hidden></p>
+
+        <div class="quiz-actions">
+          <button class="primary-btn" id="checkBtn" type="button">
+            Check Answer
+          </button>
+
+          <button class="primary-btn" id="nextQuestionBtn" type="button" hidden>
+            Next Question →
+          </button>
+        </div>
+
+        <div id="quizResult" hidden>
+          <span class="result-icon">🎉</span>
+          <h3>Challenge Complete!</h3>
+          <p>Your final score</p>
+          <strong id="finalScore">0 / 10</strong>
+
+          <button class="primary-btn" id="restartBtn" type="button">
+            Try Again ↻
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROGRESS SECTION -->
+    <section class="progress-section" id="progress">
+      <div class="section-heading">
+        <span class="eyebrow">EVERY WORD COUNTS</span>
+        <h2>Your Learning Journey</h2>
+        <p>Celebrate your progress, one word at a time.</p>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-ring" id="progressCircle">
+          <div class="progress-ring-inner">
+            <strong id="progressPercent">0%</strong>
+            <span>Completed</span>
+          </div>
+        </div>
+
+        <div class="progress-details">
+          <h3>Growing every day 🌱</h3>
+
+          <p id="progressSummary">
+            Start learning words to grow your progress.
+          </p>
+
+          <div class="progress-track">
+            <div class="progress-fill" id="overallProgressBar"></div>
+          </div>
+
+          <p>
+            <strong id="progressLearned">0</strong>
+            of
+            <strong id="progressTotal">60</strong>
+            words learned
+          </p>
+
+          <button class="secondary-btn" id="resetProgressBtn" type="button">
+            Reset Learning Progress
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <a class="footer-brand" href="#home">🌿 LinguaLearn</a>
+
+    <p>Learn · Explore · Grow</p>
+
+    <p class="footer-note">
+      Every new word is another step into a bigger world.
+    </p>
+
+    <a href="#home" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+</body>
+</html>

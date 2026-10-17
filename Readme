@@ -1,0 +1,65 @@
+# 🌿 LinguaLearn — Language Learning App
+
+**LinguaLearn** is an interactive language-learning web application designed to make learning new languages fun through flashcards, quizzes, progress tracking, and an animated 3D forest environment.
+
+## ✨ Features
+
+- 🌳 **3D Animated Forest** — A beautiful forest environment with animated animals.
+- 🌍 **Multiple Languages** — Learn Spanish, French, Japanese, German, Italian, and Telugu.
+- 🃏 **Interactive Flashcards** — Explore words, meanings, and pronunciations.
+- 🧠 **Language Quiz** — Test your knowledge with multiple-choice questions.
+- 📊 **Progress Tracking** — Track learned words and quiz performance.
+- 💾 **Local Storage** — Save learning progress in your browser.
+- 📱 **Responsive Design** — Works on desktop, tablet, and mobile screens.
+- 🎨 **Animated UI** — Smooth transitions and interactive visual effects.
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Three.js
+- Browser Local Storage
+
+## 📁 Project Structure
+
+```text
+LinguaLearn/
+├── index.html
+├── style.css
+├── script.js
+├── effects.js
+├── forest.js
+└── README.md
+```
+
+## 🚀 How to Run the Project
+
+1. Download or clone the project.
+2. Open the project folder in Visual Studio Code.
+3. Make sure all the project files are in the same folder.
+4. Install the **Live Server** extension in VS Code if needed.
+5. Right-click `index.html`.
+6. Select **Open with Live Server**.
+7. Start learning languages!
+
+> **Note:** An internet connection is required to load the Three.js library from its CDN.
+
+## 🎯 How to Use
+
+1. Select a language from the available language categories.
+2. Browse the flashcards and reveal word meanings.
+3. Mark words as learned to update your progress.
+4. Take the quiz to test your knowledge.
+5. Check your dashboard to view your learning progress.
+
+## 💡 Project Objective
+
+The objective of LinguaLearn is to provide an engaging and interactive way for users to learn vocabulary in multiple languages. It combines educational tools with an animated forest experience to make language learning more enjoyable.
+
+## 🔮 Future Enhancements
+
+- Audio pronunciation for vocabulary words.
+- More languages and vocabulary sets.
+- Daily learning goals and streaks.
+- Additional interactive 3
